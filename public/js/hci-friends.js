@@ -10,11 +10,21 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$("a.friendNames h3").click(projectClick);
+}
+
+function projectClick(e) {
+	/*console.log("Project clicked");*/
+	e.preventDefault();
+	$(this).text(anagrammedName($(this).text()))
 }
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
+	if (name == "Noodle") {
+		return "Send Noods";
+	} 
+
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
 	} 
